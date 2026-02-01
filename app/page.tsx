@@ -4,20 +4,22 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <h1>Hello Lo!</h1>;
-      <section>
+      <section className="m-6 grid grid-cols-2 md:grid-cols-4 gap-3">
         {paintings.map((painting) => (
           <div key={painting.id}>
-            <h1>{painting.name}</h1>
             {painting.images.map((image) => (
-              <Image
-                key={image.url}
-                src={image.url}
-                alt={image.alt}
-                width={500}
-                height={500}
-              />
+              <div key={image.url} className="relative aspect-square">
+                <Image
+                  src={image.url}
+                  alt={image.alt}
+                  quality={100}
+                  fill
+                />
+              </div>
             ))}
+            <h1 className="text-sm font-medium text-center m-2">
+              {painting.name}
+            </h1>
           </div>
         ))}
       </section>
