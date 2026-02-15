@@ -28,7 +28,7 @@ const Navbar = () => {
   }
   return (
     <>
-      <nav className="bg-light-primary-4 font-inter flex justify-between items-center py-4 md:py-5 px-4 md:px-12 relative text-base dark:text-white">
+      <nav className="bg-light-primary-4 dark:bg-dark-primary-4 font-inter flex justify-between items-center py-4 md:py-5 px-4 md:px-12 relative text-base dark:text-white">
         <div
           className={`hover:scale-105 transition-all z-30 ${mobileMenu && "invert"}`}
         >
@@ -50,27 +50,27 @@ const Navbar = () => {
         </ul>
         <div>
           <ul
-            className={`flex-center gap-3 border-light-primary-1 border-2 rounded-md p-2 relative z-20 ${mobileMenu && "text-white border-white z-100"}`}
+            className={`flex items-center gap-4 border-light-primary-1 border-2 rounded-md p-2 relative z-20 ${mobileMenu && "text-white border-white z-100"}`}
           >
             <li
-              className="hover:cursor-pointer hover:scale-105 transition-all"
+              className="flex items-center justify-center hover:cursor-pointer hover:scale-105 transition-all"
               onClick={handleSearch}
             >
               <FiSearch />
             </li>
-            <li>
+            <li className=" flex items-center justify-center leading-none hover:cursor-pointer hover:scale-105 transition-all">
               <ThemeChanger />
             </li>
-            <li className="hover:cursor-pointer hover:scale-105 transition-all">
+            <li className="flex items-center justify-centerhover:cursor-pointer hover:scale-105 transition-all">
               <Link href="/sign-in">
                 <FiUser />
               </Link>
             </li>
-            <li className="hover:cursor-pointer hover:scale-105 transition-all">
+            <li className="flex items-center justify-center hover:cursor-pointer hover:scale-105 transition-all">
               <FiShoppingBag />
             </li>
             <li
-              className="hover:cursor-pointer hover:scale-105 transition-all lg:hidden"
+              className="flex items-center justify-center hover:cursor-pointer hover:scale-105 transition-all lg:hidden"
               onClick={() => setMobileMenu((prev) => !prev)}
             >
               <FiMenu />
