@@ -1,6 +1,6 @@
 "use client";
 
-import Logo from "@/app/_components/Logo";
+import Logo from "@/app/_components/common/Logo";
 import Link from "next/link";
 import { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
