@@ -1,5 +1,5 @@
 const Basket = () => {
-    return (  );
-}
- 
+  return <>Basket Page</>;
+};
+
 export default Basket;
