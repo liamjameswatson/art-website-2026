@@ -1,6 +1,6 @@
 const Page = () => {
   return (
-    <div className="bg-red-500">
+    <div className=" dark:bg-dark-primary-4 bg-light-primary-4">
       <h1>About</h1>
       <hr />
       <p>

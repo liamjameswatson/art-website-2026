@@ -1,10 +1,11 @@
 "use client";
 import Link from "next/link";
-import Logo from "@/app/_components/Logo";
+import Logo from "@/app/_components/common/Logo";
 import { FiSearch, FiShoppingBag, FiUser } from "react-icons/fi";
 import { FiMenu } from "react-icons/fi";
 import { useState } from "react";
 import SearchBar from "./SearchBar";
+import ThemeChanger from "../ThemeChanger";
 
 const mainNav = [
   { title: "Creations", link: "/creations" },
@@ -27,7 +28,7 @@ const Navbar = () => {
   }
   return (
     <>
-      <nav className="bg-light-primary-4 font-inter flex justify-between items-center py-4 md:py-5 px-4 md:px-12 relative text-base">
+      <nav className="bg-light-primary-4 font-inter flex justify-between items-center py-4 md:py-5 px-4 md:px-12 relative text-base dark:text-white">
         <div
           className={`hover:scale-105 transition-all z-30 ${mobileMenu && "invert"}`}
         >
@@ -56,6 +57,9 @@ const Navbar = () => {
               onClick={handleSearch}
             >
               <FiSearch />
+            </li>
+            <li>
+              <ThemeChanger />
             </li>
             <li className="hover:cursor-pointer hover:scale-105 transition-all">
               <Link href="/sign-in">
