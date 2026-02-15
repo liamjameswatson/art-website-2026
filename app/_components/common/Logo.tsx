@@ -13,6 +13,7 @@ const Logo = ({ size = 60 }: LogoProps) => {
         width={size}
         height={size}
         alt={"Elberry star"}
+        className="dark:invert"
       />
     </Link>
   );
