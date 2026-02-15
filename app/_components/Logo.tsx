@@ -1,18 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const Logo = () => {
+type LogoProps = {
+  size?: number;
+};
+
+const Logo = ({ size = 60 }: LogoProps) => {
   return (
-    <Link href="/">
-      {/* <div 
-      className="p-2 w-20 bg-amber-500 flex items-center justify-center"> */}
+    <Link className="" href="/">
       <Image
         src="/elberry star logo.png"
-        width={60}
-        height={60}
+        width={size}
+        height={size}
         alt={"Elberry star"}
       />
-      {/* </div> */}
     </Link>
   );
 };

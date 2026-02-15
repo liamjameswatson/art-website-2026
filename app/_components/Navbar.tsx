@@ -14,7 +14,6 @@ const mainNav = [
 ];
 
 const Navbar = () => {
-  // const inputRef = useRef<HTMLInputElement>(null);
   const [searchIsVisible, setSearchIsVisible] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
 
@@ -28,7 +27,7 @@ const Navbar = () => {
   }
   return (
     <>
-      <nav className="bg-light-primary-4 font-inter flex-between py-2 px-4 rounded-md md:px-12 relative">
+      <nav className="bg-light-primary-4 font-inter flex justify-between items-center py-4 md:py-5 px-4 md:px-12 relative text-base">
         <div
           className={`hover:scale-105 transition-all z-30 ${mobileMenu && "invert"}`}
         >
@@ -59,7 +58,9 @@ const Navbar = () => {
               <FiSearch />
             </li>
             <li className="hover:cursor-pointer hover:scale-105 transition-all">
-              <FiUser />
+              <Link href="/sign-in">
+                <FiUser />
+              </Link>
             </li>
             <li className="hover:cursor-pointer hover:scale-105 transition-all">
               <FiShoppingBag />

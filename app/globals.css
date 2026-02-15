@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 @theme inline {
   /* primary - Heritage Blue*/
 
@@ -69,6 +76,12 @@
     --foreground: #ededed;
   }
 } */
+
+@layer components {
+  .form-input {
+    @apply border border-gray-300 rounded-md p-2 w-full;
+  }
+}
 
 body {
   font-family: Arial, Helvetica, sans-serif;

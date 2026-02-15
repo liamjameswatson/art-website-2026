@@ -1,6 +1,6 @@
 const Page = () => {
   return (
-    <>
+    <div className="bg-red-500">
       <h1>About</h1>
       <hr />
       <p>
@@ -49,7 +49,7 @@ const Page = () => {
         which looks reasonable. The generated Lorem Ipsum is therefore always
         free from repetition, injected humour, or non-characteristic words etc.
       </p>
-    </>
+    </div>
   );
 };
 
