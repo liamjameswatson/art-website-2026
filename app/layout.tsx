@@ -1,19 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "./_components/Navbar";
-import { Buda } from "next/font/google";
-import { Inter } from "next/font/google";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { Buda, Inter } from "next/font/google";
 
 const buda = Buda({
   variable: "--font-buda",
@@ -40,16 +27,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        // className={`${geistSans.variable} ${geistMono.variable} antialiased `}
-        className={`${inter.className}  ${buda.variable}  antialiased `}
-      >
-        <div className="max-w-7xl mx-auto overflow-hidden min-h-screen flex flex-col">
-          <header>
-            <Navbar />
-          </header>
-          <main className="grow">{children}</main>
-        </div>
+      <body className={`${inter.className}  ${buda.variable}  antialiased `}>
+        {children}
       </body>
     </html>
   );
