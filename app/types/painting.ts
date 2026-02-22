@@ -1,5 +1,5 @@
 export type Painting = {
-  id: string;
+  id?: string;
   slug: string;
 
   name: string;
@@ -10,11 +10,11 @@ export type Painting = {
   yearCreated?: number;
   medium: string;
   style?: string;
+  category?: string;
 
   widthCm: number;
   heightCm: number;
   depthCm?: number;
-  
 
   images: {
     url: string;
@@ -24,19 +24,16 @@ export type Painting = {
   isFramed: boolean;
   isOriginal: boolean;
   isPrint: boolean;
+  tags?: string[];
   isSold: boolean;
-  quantity?: number;
 
   shippingPrice?: number;
   readyToShip: boolean;
-  processingTimeDays?: number;
 
   totalPrice: number;
 
   isPaid: boolean;
-  isDelivered: boolean
+  isDelivered: boolean;
 
-  tags?: string[];
-
-  dateAdded: string;
+  stock: number;
 };
