@@ -1,4 +1,5 @@
 import { boolean, coerce, z } from "zod";
+import { formatNumberWithDecimal } from "./utils";
 
 // Insert Product validation schema
 
@@ -7,12 +8,20 @@ export const imageSchema = z.object({
   alt: z.string().min(3, "Image alt text is required"),
 });
 
+const currency = z
+  .string()
+  .refine(
+    (value) => /^\d+(\.\d{2})?$/.test(formatNumberWithDecimal(Number(value))),
+    "Price must be a valid number with up to two decimal places",
+  );
+
 export const paintingSchema = z.object({
   name: z.string().min(3, "Name is required"),
   slug: z.string().min(3, "Slug is required"),
   description: z.string().min(20, "Description is required"),
-  price: z.number(),
+  //   price: z.number(),
 
+  price: currency,
   artist: z.string().nullable(),
   yearCreated: z.string().nullable(),
   medium: z.string().min(3, "Medium is required"),
@@ -31,9 +40,7 @@ export const paintingSchema = z.object({
   isPrint: z.boolean().default(false),
   isSold: z.boolean().default(false),
 
-  shippingPrice: z
-    .number()
-    .positive("Shipping price must be a positive number"),
+  shippingPrice: currency.nullable(),
   readyToShip: z.boolean().default(false),
 
   totalPrice: z.number().positive("Total price must be a positive number"),
