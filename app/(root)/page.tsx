@@ -2,7 +2,12 @@ import { paintings } from "@/app/mock_data/data/paintings";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
+import { getAllProducts } from "../_lib/actions/product-actions";
+
+export default async function Home() {
+  const products = await getAllProducts();
+  console.log(products);
+
   return (
     <>
       <section className="m-6 grid grid-cols-2 md:grid-cols-4 gap-3">
