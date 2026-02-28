@@ -4,16 +4,21 @@ import { useTheme } from "next-themes";
 import { FiSun, FiMoon } from "react-icons/fi";
 
 const ThemeSwitch = () => {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
 
-  return (
-    <button
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      className="hover:cursor-pointer hover:scale-105 transition-all"
-    >
-      {theme === "light" ? <FiSun /> : <FiMoon />}
-    </button>
-  );
+  const isLight = resolvedTheme === "light";
+
+  if (!resolvedTheme)
+    return (
+      <button
+        onClick={() => setTheme(isLight ? "dark" : "light")}
+        className="hover:cursor-pointer hover:scale-105 transition-all"
+      >
+        {isLight ? <FiSun /> : <FiMoon />}
+      </button>
+    );
 };
 
 export default ThemeSwitch;
+
+

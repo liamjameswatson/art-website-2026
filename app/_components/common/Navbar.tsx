@@ -5,7 +5,13 @@ import { FiSearch, FiShoppingBag, FiUser } from "react-icons/fi";
 import { FiMenu } from "react-icons/fi";
 import { useState } from "react";
 import SearchBar from "./SearchBar";
-import ThemeChanger from "../ThemeChanger";
+// import ThemeChanger from "../ThemeChanger";
+
+import dynamic from "next/dynamic";
+
+const ThemeChanger = dynamic(() => import("../ThemeChanger"), {
+  ssr: false,
+});
 
 const mainNav = [
   { title: "Creations", link: "/creations" },
