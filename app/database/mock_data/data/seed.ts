@@ -1,7 +1,7 @@
 //seed.ts
 import "dotenv/config";
 import { PrismaClient } from "@/app/generated/prisma/client";
-import { paintings } from "./paintings";
+import { paintings as products } from "./paintings";
 
 async function main() {
   const prisma = new PrismaClient();
@@ -10,9 +10,14 @@ async function main() {
   await prisma.product.deleteMany();
 
   // seed new data
-  await prisma.product.createMany({
-    data: paintings,
-  });
+  for (const product of products) {
+    console.log("SEEDING PRODUCT:");
+    console.log(JSON.stringify(product, null, 2));
+
+    await prisma.product.create({
+      data: product,
+    });
+  }
 
   console.log("database seeded successfully");
 }

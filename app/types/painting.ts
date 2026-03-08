@@ -1,10 +1,7 @@
 import { z } from "zod";
-import { paintingSchema } from "@/app/_lib/validators";
+import { paintingSchema, productImageSchema } from "@/app/_lib/validators";
 
-export type Image = {
-  url: string;
-  alt: string;
-};
+export type ProductImage = z.infer<typeof productImageSchema>;
 
 export type Painting = z.infer<typeof paintingSchema> & {
   id: string;
