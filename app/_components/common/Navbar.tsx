@@ -5,10 +5,9 @@ import { FiSearch, FiShoppingBag, FiUser } from "react-icons/fi";
 import { FiMenu } from "react-icons/fi";
 import { useState } from "react";
 import SearchBar from "./SearchBar";
-// import ThemeChanger from "../ThemeChanger";
-
 import dynamic from "next/dynamic";
 
+// Disable SSR to prevent hydration mismatch caused by next-themes
 const ThemeChanger = dynamic(() => import("../ThemeChanger"), {
   ssr: false,
 });
@@ -34,7 +33,7 @@ const Navbar = () => {
   }
   return (
     <>
-      <nav className="bg-light-primary-4 dark:bg-dark-primary-4 font-inter flex justify-between items-center py-4 md:py-5 px-4 md:px-12 relative text-base dark:text-white">
+      <nav className="bg-light-primary-4 dark:bg-dark-primary-4 font-inter flex justify-between items-center py-4 md:py-5 px-4 md:px-12 relative text-base dark:text-white shadow-sm">
         <div
           className={`hover:scale-105 transition-all z-30 ${mobileMenu && "invert"}`}
         >

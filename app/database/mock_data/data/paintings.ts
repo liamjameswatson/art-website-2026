@@ -47,6 +47,10 @@ export const paintings: Painting[] = [
         url: "/moon-over-tor.jpg",
         alt: "Moon Over the Tor painting",
       },
+      {
+        url: "/moon-over-tor2.jpg",
+        alt: "Moon Over the Tor painting2",
+      },
     ],
     isFramed: false,
     isOriginal: true,

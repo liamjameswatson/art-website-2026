@@ -28,6 +28,21 @@
 
 import { PrismaClient } from "@prisma/client";
 
-export const prisma = new PrismaClient();
+export const prisma = new PrismaClient().$extends({
+  result: {
+    product: {
+      price: {
+        compute(product) {
+          return product.price.toString();
+        },
+      },
+      shippingPrice: {
+        compute(product) {
+          if (product.shippingPrice) return product.shippingPrice.toString();
+        },
+      },
+    },
+  },
+});
 
 // https://neon.com/docs/guides/prisma
