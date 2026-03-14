@@ -1,6 +1,7 @@
 import { getProductBySlug } from "@/app/_lib/actions/product-actions";
 import ProductImages from "@/app/_components/common/ProductImages";
 import { ProductImage } from "@/app/types/painting";
+import Breadcrumb from "@/app/_components/common/Breadcrumb";
 
 const ProductPage = async (props: { params: Promise<{ slug: string }> }) => {
   const { slug } = await props.params;
@@ -12,11 +13,7 @@ const ProductPage = async (props: { params: Promise<{ slug: string }> }) => {
   return (
     <section className="min-h-screen bg-light-primary-4">
       {/* Breadcrumb */}
-      <div className="px-8 pt-6 pb-0 max-w-7xl mx-auto">
-        <p className="text-xs tracking-[0.2em] uppercase text-gray-400 font-light">
-          Shop / <span className="text-gray-600">{product.name}</span>
-        </p>
-      </div>
+      <Breadcrumb />
 
       {/* Main layout */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 px-8 py-10 max-w-7xl mx-auto">

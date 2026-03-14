@@ -8,10 +8,10 @@ type ProductImagesProps = {
 };
 
 const ProductImages = ({ images }: ProductImagesProps) => {
-  console.log(images);
+  
   const [selected, setSelected] = useState(0);
 
-  console.log(images);
+  
   return (
     <div className="space-y-4">
       <Image
